@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emerald Love Legacy | Valentine Flowers</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url("images/flower1.jpg") center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    /* BUTTON */
+    .btn {
+      background: #0b7a4b;
+      color: white;
+      padding: 14px 34px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #095f3a;
+    }
+
+    /* COUNTDOWN */
+    .countdown {
+      background: #f8f4f6;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .countdown h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      color: #0b7a4b;
+    }
+
+    #timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    #timer div {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      min-width: 90px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    #timer span {
+      font-size: 2rem;
+      font-weight: 600;
+      display: block;
+      color: #0b7a4b;
+    }
+
+    #timer small {
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    /* PRODUCT */
+    .product {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .product h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.7rem;
+      color: #0b7a4b;
+      margin-bottom: 15px;
+    }
+
+    .desc {
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 35px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 35px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b7a4b;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Emerald Love Legacy</h1>
+    <p>Luxury Valentine Flowers 🌹🌺</p>
+    <a class="btn" href="https://wa.me/2348138334533?text=Hello%20I%20want%20to%20order%20your%20Valentine%20Flowers%20from%20Emerald%20Love%20Legacy">
+      BUY NOW ON WHATSAPP
+    </a>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+    <h2>Valentine Countdown 💕</h2>
+    <div id="timer">
+      <div><span id="days">00</span><small>Days</small></div>
+      <div><span id="hours">00</span><small>Hours</small></div>
+      <div><span id="minutes">00</span><small>Minutes</small></div>
+      <div><span id="seconds">00</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section class="product">
+    <h2>Valentine Flower Package</h2>
+    <p class="price">₦10,000</p>
+    <p class="desc">
+      Express love the elegant way 💖  
+      Our carefully selected Valentine flowers are perfect for surprising
+      your special someone.
+    </p>
+
+    <div class="gallery">
+      <img src="images/flower1.jpg" alt="Valentine Flowers">
+      <img src="images/flower2.jpg" alt="Luxury Valentine Flowers">
+    </div>
+
+    <a class="btn" href="https://wa.me/2348138334533?text=Hello%20I%20want%20to%20order%20the%20Valentine%20Flower%20Package%20for%20₦10,000">
+      ORDER NOW
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Emerald Love Legacy</p>
+    <p>Love • Luxury • Romance 💖</p>
+  </footer>
+
+  <!-- COUNTDOWN SCRIPT -->
+  <script>
+    function getNextValentine() {
+      const now = new Date();
+      let year = now.getFullYear();
+      let valentine = new Date(year, 1, 14); // Feb 14
+
+      if (now > valentine) {
+        valentine = new Date(year + 1, 1, 14);
+      }
+      return valentine;
+    }
+
+    const targetDate = getNextValentine();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
